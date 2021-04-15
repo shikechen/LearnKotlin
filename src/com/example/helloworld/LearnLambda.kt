@@ -41,4 +41,55 @@ fun main() {
     for ((fruit, number) in map2) {
         println("fruit is " + fruit + ", number is " + number)
     }
+
+    println("============")
+    val list2 = listOf("Apple", "Banana", "Cherry", "Watermelon")
+//    val maxLengthFruit = list2.maxBy { it.length }
+//    println("max length fruit is " + maxLengthFruit)
+
+//    val lambda = {fruit: String -> fruit.length}
+//    val maxLengthFruit = list.maxBy(lambda)
+
+//    val maxLengthFruit = list.maxBy({fruit: String -> fruit.length})
+//    val maxLengthFruit = list.maxBy() { fruit: String -> fruit.length }
+//    val maxLengthFruit = list.maxBy { fruit: String -> fruit.length }
+//    val maxLengthFruit = list.maxBy { fruit -> fruit.length }
+    val maxLengthFruit = list.maxBy { it.length }
+
+//    val newList = list2.map { it.toUpperCase() }
+//    for (fruit in newList) {
+//        println(fruit)
+//    }
+
+//    val newList2 = list2.filter { it.length < 6 }
+//                        .map { it.toUpperCase() }
+//    for (fruit in newList2) {
+//        println(fruit)
+//    }
+
+    val anyResult = list2.any { it.length < 6 }
+    val allResult = list2.all { it.length < 6 }
+    println("anyResult is " + anyResult + ", allResult is " + allResult)
+
+//    Thread(object : Runnable {
+//        override fun run() {
+//            println("Thread is running")
+//        }
+//    }).start()
+
+//    Thread(Runnable {
+//        println("Thread is running")
+//    }).start()
+
+//    Thread({
+//        println("Thread is running")
+//    }).start()
+
+//    Thread(){
+//        println("Thread is running")
+//    }.start()
+
+    Thread {
+        println("Thread is running")
+    }.start()
 }
