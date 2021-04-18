@@ -1,5 +1,7 @@
 package com.example.helloworld
 
+import java.lang.StringBuilder
+
 fun main() {
     val list = ArrayList<String>()
     list.add("Apple")
@@ -92,4 +94,45 @@ fun main() {
     Thread {
         println("Thread is running")
     }.start()
+
+    println("============")
+
+    val list4 = listOf("Apple", "Banana", "Cherry", "Melon")
+//    val builder = StringBuilder()
+//    builder.append("Start eating fruits.\n")
+//    for (fruit in list4) {
+//        builder.append("Eating $fruit\n")
+//    }
+//    builder.append("Game end")
+//    val result = builder.toString()
+//    println(result)
+
+    val result = with(StringBuilder()) {
+        append("Start eating fruits.\n")
+        for (fruit in list4) {
+            append("Eating $fruit\n")
+        }
+        append("Game end")
+        toString()
+    }
+    println(result)
+
+    val result2 = StringBuilder().run {
+        append("Start eating fruits.\n")
+        for (fruit in list4) {
+            append("Eating $fruit\n")
+        }
+        append("Game end")
+        toString()
+    }
+    println(result2)
+
+    val result3 = StringBuilder().apply {
+        append("Start eating fruits.\n")
+        for (fruit in list4) {
+            append("Eating $fruit\n")
+        }
+        append("Game end")
+    }
+    println(result3.toString())
 }

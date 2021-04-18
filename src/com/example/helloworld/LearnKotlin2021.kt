@@ -1,7 +1,5 @@
 package com.example.helloworld
 
-import kotlin.math.max
-
 fun main() {
     println("Hello Kotlin!")
     println("20210411")
@@ -75,6 +73,9 @@ fun main() {
 
 //    printParams(123)
     printParams(str = "123")
+
+    MyUtil.doSomething2()
+    doSomething()
 }
 
 //fun largeNumber(num1 : Int, num2 : Int): Int {
