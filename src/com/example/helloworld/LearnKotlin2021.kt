@@ -1,7 +1,5 @@
 package com.example.helloworld
 
-import kotlin.math.max
-
 fun main() {
     println("Hello Kotlin!")
     println("20210411")
@@ -63,6 +61,21 @@ fun main() {
     println("phone1 equals phone2: " + (phone1 == phone2))
 
     Singleton.test()
+
+    doStudy(null)
+
+    val textLength = getTextLength("study")
+    println("textLength is $textLength")
+
+    if (content != null) {
+        printUpperCase()
+    }
+
+//    printParams(123)
+    printParams(str = "123")
+
+    MyUtil.doSomething2()
+    doSomething()
 }
 
 //fun largeNumber(num1 : Int, num2 : Int): Int {
@@ -125,7 +138,51 @@ fun getScore2(name: String) = when {
     else -> 0
 }
 
-fun doStudy(study: Study) {
-    study.readBooks()
-    study.doHomework()
+//fun doStudy(study: Study?) {
+//    if (study != null) {
+//        study.readBooks()
+//        study.doHomework()
+//    }
+//}
+
+//fun doStudy(study: Study?) {
+//    study?.readBooks()
+//    study?.doHomework()
+//}
+
+//fun doStudy(study: Study?) {
+//    study?.let { stu ->
+//        stu.readBooks()
+//        stu.doHomework()
+//    }
+//}
+
+fun doStudy(study: Study?) {
+    study?.let {
+        it.readBooks()
+        it.doHomework()
+    }
+}
+
+//fun getTextLength(text: String?): Int {
+//    if (text != null) {
+//        return text.length
+//    }
+//    return 0
+//}
+
+fun getTextLength(text: String?) = text?.length ?: 0
+
+var content: String? = "hello"
+fun printUpperCase() {
+    val upperCase = content!!.toUpperCase()
+    println(upperCase)
+}
+
+//fun printParams(num: Int, str: String = "hello") {
+//    println("num is $num, str is $str")
+//}
+
+fun printParams(num: Int = 123, str: String) {
+    println("num is $num, str is $str")
 }
