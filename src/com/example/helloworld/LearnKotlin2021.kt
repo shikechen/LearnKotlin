@@ -76,6 +76,29 @@ fun main() {
 
     MyUtil.doSomething2()
     doSomething()
+
+    println("==========")
+    val str = "123!@#asdqwezxc"
+    val count = StringUtil.lettersCount(str)
+    println("letter count is $count")
+
+    val count2 = str.lettersCount()
+    println("letter count is $count2")
+
+    println("letters reversed: ${str.reversed()}")
+    val temp = "asdfghjkl"
+    println("text temp become: ${temp.capitalize()}")
+
+    val money1 = Money(10)
+    val money2 = Money(20)
+    val money3 = money1 + money2
+    val money4 = money3 + 30
+    println(money4.value)
+
+    val strTimes = "abc" * 5
+    println(strTimes)
+
+    println(getRandomLengthString("abc"))
 }
 
 //fun largeNumber(num1 : Int, num2 : Int): Int {
