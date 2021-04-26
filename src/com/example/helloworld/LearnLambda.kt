@@ -1,6 +1,6 @@
 package com.example.helloworld
 
-import java.lang.StringBuilder
+import kotlin.text.StringBuilder
 
 fun main() {
     val list = ArrayList<String>()
@@ -135,4 +135,25 @@ fun main() {
         append("Game end")
     }
     println(result3.toString())
+
+    val num1 = 100
+    val num2 = 80
+//    val result11 = num1AndNum2(num1, num2, ::plus)
+//    val result12 = num1AndNum2(num1, num2, ::minus)
+    val result11 = num1AndNum2(num1, num2) { n1, n2 ->
+        n1 + n2
+    }
+    val result12 = num1AndNum2(num1, num2) { n1, n2 ->
+        n1 - n2
+    }
+    println("result1 is $result11, result2 is $result12")
+
+    val result4 = StringBuilder().build {
+        append("Start eating fruits.\n")
+        for (fruit in list4) {
+            append("Eating $fruit\n")
+        }
+        append("Game end")
+    }
+    println(result4.toString())
 }
