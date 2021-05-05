@@ -99,6 +99,16 @@ fun main() {
     println(strTimes)
 
     println(getRandomLengthString("abc"))
+
+    val myClass = MyClass<Int>()
+    val result = myClass.method(123)
+
+    val myClass2 = MyClass2()
+    val result2 = myClass2.method<Int>(123)
+
+    val myClass3 = MyClass3()
+//    val result3 = myClass3.method("abc")
+    val result3 = myClass3.method(123)
 }
 
 //fun largeNumber(num1 : Int, num2 : Int): Int {
